@@ -7,12 +7,19 @@
     <ion-icon slot="end" name="list" color="primary" class="ion-padding"></ion-icon>
   </ion-toolbar>
 </ion-header> -->
-<app-encabezado titulo="Página 2" icono="list"></app-encabezado>
+<app-encabezado titulo="Lista de Personas" icono="list"></app-encabezado>
 
-<ion-content class="ion-padding">
-  <ion-text color="primary">
-    <h1>Esta es la página 2</h1>
-  </ion-text>
+<ion-content>
+  <ion-list *ngFor="let per of personas; let i=index" lines="full">
+    <ion-item>
+      <ion-avatar slot="start">
+        <img [src]="per.srcimagen">
+      </ion-avatar>
+      <ion-label>{{per.nombre}} {{per.apellido}}</ion-label>
+      <!-- <ion-label>{{i+1}} {{per.nombre}} {{per.apellido}}</ion-label> -->
+    </ion-item>
+    
+  </ion-list>
 </ion-content>
 
 <app-footer></app-footer>
